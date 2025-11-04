@@ -46,7 +46,6 @@
 		<set name="BUILD_DIR" value="/root/PsychEngine06/export/debug" if="debug" />
 		<set name="BUILD_DIR" value="/root/PsychEngine06/export/release" unless="debug" />
 		<set name="BUILD_DIR" value="/root/PsychEngine06/export/32bit" if="32bits" />
-		<android target-sdk-version="34" />
 	</section>
 
 	<classpath name="source" />
@@ -206,7 +205,11 @@
 	<haxedef name="HXCPP_CHECK_POINTER" if="CRASH_HANDLER" />
 	<haxedef name="HXCPP_STACK_LINE" if="CRASH_HANDLER" />
 	
-	<!-- Allow Write Access to EXTERNAL_DATA Directory -->
+	<!-- Category Type for Apple Systems -->
+	<config:ios category_type="public.app-category.music-games" />
+	<config:mac category_type="public.app-category.music-games" />
+
+	<!-- Allow Access to Engine Files in mobile -->
 	<haxedef name="SHARE_MOBILE_FILES" if="mobile" />
 	
 	<!-- Do whatever you want I'm tired uninstall and install everytime -->
