@@ -15,6 +15,13 @@ jobs:
             artifactName: androidBuild
             artifactPath: "export/release/android/bin/app/build/outputs/apk/release/*.apk"
             system: Android
+          - name: iOS-Sim
+            os: macos-14
+            buildArgs: "ios -nosign"
+            setupCommand: sh ./setup/unix.sh
+            artifactName: iOSBuild
+            artifactPath: "export/release/ios/build/Release-iphoneos/*.ipa"
+            system: iOS-Sim
     uses: ./.github/workflows/build.yml
     with:
         name: ${{ matrix.name }}
