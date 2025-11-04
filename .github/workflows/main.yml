@@ -12,7 +12,7 @@ jobs:
             os: ubuntu-22.04
             buildArgs: "android -D officialBuild -final" 
             setupCommand: sh ./setup/unix.sh
-            artifactName: androidBuild-Both
+            artifactName: androidBuild
             artifactPath: "export/release/android/bin/app/build/outputs/apk/release/*.apk"
             system: Android
     uses: ./.github/workflows/build.yml
