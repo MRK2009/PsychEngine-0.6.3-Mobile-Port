@@ -15,7 +15,7 @@ jobs:
             artifactName: androidBuild
             artifactPath: "export/release/android/bin/app/build/outputs/apk/release/*.apk"
             system: Android
-          - name: iOS-Sim
+          - name: iOS
             os: macos-14
             buildArgs: "ios -nosign"
             setupCommand: sh ./setup/unix.sh
