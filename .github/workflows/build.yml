@@ -64,14 +64,6 @@ jobs:
       - name: Compile
         run: haxelib run lime build ${{ inputs.buildArgs }}
 
-      - name: Make IPA For iOS Simulator
-        if: inputs.system == 'iOS-Sim'
-        run: |
-          cd export/release/ios/build/Release-iphonesimulator
-          mkdir Payload
-          mv *.app Payload
-          zip -r ${{ env.PROJECT_NAME }}.ipa Payload
-
       - name: Make IPA For iOS
         if: inputs.system == 'iOS'
         run: |
